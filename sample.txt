@@ -1,0 +1,18 @@
+PRGAM1 START  0
+       USING  *, 13 ; test comment
+       SR     4, INDEX
+       SR     5, INDEX
+       L      3,=F'5'
+INDEX  EQU    3
+LOOP   L      2, SETUP2
+       A      2,=F'49'
+       ST     2, DATA
+       A      4,=F'4'
+       LR     1, TOTAL
+       BNE    LOOP
+       BR     14 ; another one
+       LTORG
+SETUP  DC     F'34'
+TOTAL  DC     F'8'
+DATA   DS     10F
+END
